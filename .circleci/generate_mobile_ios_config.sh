@@ -122,18 +122,18 @@ jobs:
           name: Populate EnvFile
           command: env >> .env
 
-      - run:
-          name: Run tests
-          command: bundle exec fastlane tests
-          working_directory: ios
+      # - run:
+      #     name: Run tests
+      #     command: bundle exec fastlane tests
+      #     working_directory: ios
 
-      - run:
-          name: Set up test results
-          working_directory: ios
-          command: |
-            mkdir -p test-results/fastlane test-results/xcode
-            mv fastlane/report.xml test-results/fastlane
-            mv fastlane/test_output/report.junit test-results/xcode/junit.xml
+      # - run:
+      #     name: Set up test results
+      #     working_directory: ios
+      #     command: |
+      #       mkdir -p test-results/fastlane test-results/xcode
+      #       mv fastlane/report.xml test-results/fastlane
+      #       mv fastlane/test_output/report.junit test-results/xcode/junit.xml
 
       - run:
           name: Create and push a new $MOBILE_LANE build to App Store
