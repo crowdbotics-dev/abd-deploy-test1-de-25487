@@ -107,13 +107,13 @@ jobs:
             cd app
             echo "$ANDROID_KEYSTORE" | base64 --decode > upload-key.keystore
 
-      - run:
-          name: Build and upload to appetize.io
-          command: bundle exec fastlane deploy_appetize
-          working_directory: android
+      # - run:
+      #     name: Build and upload to appetize.io
+      #     command: bundle exec fastlane deploy_appetize
+      #     working_directory: android
 
-      - store_artifacts:
-          path: android/app/build/outputs/apk/release/app-release.apk
+      # - store_artifacts:
+      #     path: android/app/build/outputs/apk/release/app-release.apk
 
       - run:
           name: create a new android app bundle build
